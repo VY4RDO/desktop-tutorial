@@ -1,0 +1,80 @@
+label {
+    text-align: justify;
+}
+
+body, h1, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; 
+    background: linear-gradient(135deg, #7d3dde, #d9e2ec);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#countLabel {
+    font-size: 48px;
+    color: #ffffff; 
+    margin-bottom: 20px;
+    transition: transform 0.2s; /* Add transition for pop effect */
+}
+
+.button-container {
+    display: flex; 
+    gap: 10px; 
+}
+
+button {
+    background-color: #3d39c2; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #08606b; 
+    transform: scale(1.1); 
+}
+
+button:active {
+    transform: scale(1.0); 
+}
+
+/* Bubble styles */
+.bubbles {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none; /* Prevent mouse events on bubbles */
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: rise 1s forwards;
+}
+
+/* Bubble animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
